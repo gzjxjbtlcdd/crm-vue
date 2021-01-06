@@ -7,7 +7,7 @@
                    border-radius: 50%;vertical-align: middle;margin:0 8px 0 10px">
           <span style="font-weight: 700;color: white;font-size: 18px">crm管理系统</span>
         </div>
-        <el-scrollbar class="scrollerbar">
+        <el-scrollbar class="scrollerbar" style="height: calc(100% - 60px)">
           <el-menu default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
             <el-menu-item index="1">
               <i class="el-icon-menu"></i>
@@ -43,7 +43,7 @@
         <el-header>Header</el-header>
         <el-main>
           <div class="main-body">
-
+            <router-view/>
           </div>
           </el-main>
       </el-container>
@@ -51,66 +51,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "index",
-  data() {
-    return {
-      isCollapse: false
-    }
-  }
-}
+<script src="./index.js">
+
 </script>
 
-<style scoped>
-.main-box {
-  height: 100%;
-}
-.main-body{
-  background-color: #fff;
-  height: 100%;
-  margin: 10px 0 0 10px;
-  padding: 20px 0 0 20px;
-}
-.scrollerbar{
-  height: calc(100% - 70px);
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-
-.el-header, .el-footer {
-  background-color: #2de3c6;
-  color: #fff;
-  text-align: center;
-  line-height: 60px;
-}
-
-.el-aside {
-  background-color: #fff;
-  color: #444;
-}
-
-.title-wrapper {
-  line-height: 60px;
-  background-color: #2de3c6;
-}
-
-.el-main {
-  background-color: #E9EEF3;
-  color: #333;
-  text-align: center;
-  padding: 0;
-  overflow: hidden;
-
-
-}
-
-.el-container {
-  height: 100%;
-}
-
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
-}
+<style lang="less" src="./index.less">
 </style>

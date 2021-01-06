@@ -22,14 +22,34 @@ const routes = [
     // }
     //path：表示的是请求路径
 // name：表示名称可以不要
-    {path:'/login',
-    name:'login',
-    component:()=>import('../views/login/index.vue')
+    {
+        path: '/',
+        redirect: "/main"
     },
-    {path:'/main',
-        name:'main',
-        component:()=>import('../views/main/index.vue')
-    }
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('../views/login/index.vue')
+    },
+    {
+        path: '/main',
+        name: 'main',
+        component: () => import('../views/main/index.vue'),
+        children:[
+            {
+                path: 'index',
+                name: 'index',
+                component: () => import('../views/index/index.vue')
+            },
+            {
+                path: 'supplier',
+                name: 'supplier',
+                component: () => import('../views/supplier/index.vue')
+            }
+
+        ]
+    },
+
 ]
 
 const router = new VueRouter({
